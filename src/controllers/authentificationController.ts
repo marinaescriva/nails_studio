@@ -1,4 +1,6 @@
-app.post(`/auth/register`, (req, res)=>{
+import { Request, Response } from "express"
+
+export const postAuthRegister = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -7,8 +9,8 @@ app.post(`/auth/register`, (req, res)=>{
         }
     )
 
-});
-app.post(`/auth/login`, (req, res)=>{
+};
+export const postAuthLogin = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -17,4 +19,4 @@ app.post(`/auth/login`, (req, res)=>{
         }
     )
 
-});
+};

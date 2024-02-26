@@ -1,4 +1,6 @@
-app.post(`/appointments`, (req, res)=>{
+import { Request, Response } from "express"
+
+export const postAppointments = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -7,8 +9,9 @@ app.post(`/appointments`, (req, res)=>{
         }
     )
 
-});
-app.put(`/appointments`, (req, res)=>{
+};
+
+export const putAppointments = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -17,8 +20,9 @@ app.put(`/appointments`, (req, res)=>{
         }
     )
 
-});
-app.get(`/appointments/{id}`, (req, res)=>{
+};
+
+export const getAppointmentsbyID = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -27,8 +31,9 @@ app.get(`/appointments/{id}`, (req, res)=>{
         }
     )
 
-});
-app.get(`/appointments`, (req, res)=>{
+};
+
+export const getAppointments = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -37,4 +42,4 @@ app.get(`/appointments`, (req, res)=>{
         }
     )
 
-});
+};
