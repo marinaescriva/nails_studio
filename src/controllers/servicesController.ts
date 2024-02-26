@@ -1,12 +1,11 @@
+import { Request, Response } from "express"
 
-app.get(`/services`, (req, res)=>{
+export const getServices = (req:Request, res:Response) => {
 
     res.status(200).json(
-
         {
             success:true,
-            message: "ver los servicios"
+            message: "ver todos los servicios"
         }
     )
-
-});
+};

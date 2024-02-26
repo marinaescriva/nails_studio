@@ -1,7 +1,10 @@
 
 import express, { Application } from "express";
 import dotenv from "dotenv";
-import {getUsers} from "./controllers/usersController"; 
+import {getUsers, getUsersProfile, putUsersProfile} from "./controllers/usersController"; 
+import { getServices } from "./controllers/servicesController";
+import { postAuthLogin, postAuthRegister } from "./controllers/authentificationController";
+import { getAppointments, getAppointmentsbyID, postAppointments, putAppointments } from "./controllers/appointmentsController";
 
 dotenv.config();
 
@@ -11,27 +14,18 @@ const PORT = process.env.PORT || 4001;
 
 
 app.get(`/users`, getUsers );
+app.get(`/users/profile`, getUsersProfile);
+app.put(`/users/profile`, putUsersProfile);
 
-app.get(`/users/profile`, (req, res)=>{
+app.post(`/auth/login`, postAuthLogin);
+app.post(`/auth/register`, postAuthRegister); 
 
-    res.status(200).json(
-        {
-            success:true,
-            message: "ver perfil de usuario"
-        }
-    )
+app.get(`/appointments/{id}`, getAppointments);
+app.get(`/appointments`, getAppointmentsbyID );
+app.post(`/appointments`, postAppointments );
+app.put(`/appointments`, putAppointments);
 
-});
-app.put(`/users/profile`, (req, res)=>{
-
-    res.status(200).json(
-        {
-            success:true,
-            message: "modificar un campo del perfil"
-        }
-    )
-
-});
+app.get(`/services`, getServices);
 
 app.listen(PORT,() =>{
     console.log(`server is running on port: ${PORT}`);

@@ -9,4 +9,23 @@ export const getUsers = (req:Request, res:Response) => {
         }
     )
 };
+export const getUsersProfile = (req:Request, res:Response)=>{
 
+    res.status(200).json(
+        {
+            success:true,
+            message: "ver perfil de usuario"
+        }
+    )
+
+};
+export const putUsersProfile = (req:Request, res:Response)=>{
+
+    res.status(200).json(
+        {
+            success:true,
+            message: "modificar un campo del perfil"
+        }
+    )
+
+}
