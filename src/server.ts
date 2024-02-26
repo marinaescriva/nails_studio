@@ -1,6 +1,7 @@
 
 import express, { Application } from "express";
 import dotenv from "dotenv";
+import {getUsers} from "./controllers/usersController"; 
 
 dotenv.config();
 
@@ -9,7 +10,7 @@ const app: Application = express();
 const PORT = process.env.PORT || 4001;
 
 
-app.get(`/users`, );
+app.get(`/users`, getUsers );
 
 app.get(`/users/profile`, (req, res)=>{
 
