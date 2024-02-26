@@ -1,4 +1,6 @@
-const getUsers = (req, res) => {
+import { Request, Response } from "express"
+
+export const getUsers = (req:Request, res:Response) => {
 
     res.status(200).json(  //solo debe ser para super_admin
         {
@@ -6,5 +8,5 @@ const getUsers = (req, res) => {
             message: "ver todos los usuarios"
         }
     )
+};
 
-}
