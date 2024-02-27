@@ -19,6 +19,7 @@ export class Users1709021870692 implements MigrationInterface {
                         name: "name",
                         type: "varchar",
                         length: "50",
+                        isNullable: false,
                     },
                     {
                         name: "password",
@@ -36,6 +37,7 @@ export class Users1709021870692 implements MigrationInterface {
                     {
                         name: "role_id",
                         type: "int",
+                        default: 3, //el role que le asignaremos a user
                     },
                     {
                         name: "created_at",
@@ -50,15 +52,15 @@ export class Users1709021870692 implements MigrationInterface {
 
                     },
                 ],
-                // foreignKeys:[
-                //     {
+                foreignKeys:[
+                    {
 
-                //     columnNames: ["role_id"],
-                //     referencedTableName: "roles",
-                //     referencedColumnNames: ["id"],
-                //     onDelete: "CASCADE",
-                //     }
-                // ]
+                    columnNames: ["role_id"],
+                    referencedTableName: "roles",
+                    referencedColumnNames: ["id"],
+                    onDelete: "CASCADE",
+                    }
+                ]
                     
             }),
             true
