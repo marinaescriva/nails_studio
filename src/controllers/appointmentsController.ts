@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 
 export const postAppointments = (req:Request, res:Response)=>{
 
+
     res.status(200).json(
         {
             success:true,
@@ -23,6 +24,8 @@ export const putAppointments = (req:Request, res:Response)=>{
 };
 
 export const getAppointmentsbyID = (req:Request, res:Response)=>{
+
+    req.params.id;
 
     res.status(200).json(
         {
