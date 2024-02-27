@@ -18,8 +18,8 @@ app.put(`/users/profile`, putUsersProfile);
 app.post(`/auth/login`, postAuthLogin);
 app.post(`/auth/register`, postAuthRegister);
 
-app.get(`/appointments/{id}`, getAppointments);
-app.get(`/appointments`, getAppointmentsbyID);
+app.get(`/appointments/:id`, getAppointmentsbyID);
+app.get(`/appointments`, getAppointments);
 app.post(`/appointments`, postAppointments);
 app.put(`/appointments`, putAppointments);
 
