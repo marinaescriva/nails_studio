@@ -43,7 +43,7 @@ export class Users1709021870692 implements MigrationInterface {
                     {
                         name: "role_id",
                         type: "int",
-                        default: 3, //el role que le asignaremos a user
+                        default: 3, //el role que le asignaremos a user 3 , por defecto entran como user todos los registros.
                     },
                     {
                         name: "created_at",
