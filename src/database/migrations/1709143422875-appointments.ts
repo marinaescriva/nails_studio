@@ -1,12 +1,12 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Appointments1709022146028 implements MigrationInterface {
+export class Appointments1709143422875 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
 
         await queryRunner.createTable(
             new Table({
-                name: "users",
+                name: "appointments",
                 columns: [
                     {
                         name: "id",
@@ -18,34 +18,34 @@ export class Appointments1709022146028 implements MigrationInterface {
                     {
                         name: "appointment_date",
                         type: "timestamp",
-                        length: "50",
-                        isNullable: false,
+                        isNullable: false
                     },
                     {
                         name: "user_id",
-                        type: "int",
-                    }
-
-                ],
-                foreignKeys:[
-                    {
-                    columnNames: ["user_id"],
-                    referencedTableName: "users",
-                    referencedColumnNames: ["id"],
-                    onDelete: "CASCADE",
+                        type: "int"
                     },
                     {
-                    columnNames: ["service_id"],
-                    referencedTableName: "services",
-                    referencedColumnNames: ["id"],
-                    onDelete: "CASCADE",
+                        name: "service_id",
+                        type: "int"
+                    }
+                ],
+                foreignKeys: [
+                    {
+                        columnNames: ["user_id"],
+                        referencedTableName: "users",
+                        referencedColumnNames: ["id"],
+                        onDelete: "CASCADE"
+                    },
+                    {
+                        columnNames: ["service_id"],
+                        referencedTableName: "services",
+                        referencedColumnNames: ["id"],
+                        onDelete: "CASCADE"
                     }
                 ]
-                    
             }),
             true
         );
-
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
