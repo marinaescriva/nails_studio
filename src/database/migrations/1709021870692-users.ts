@@ -22,6 +22,12 @@ export class Users1709021870692 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
+                        name: "surname",
+                        type: "varchar",
+                        length: "50",
+                        isNullable: false,
+                    },
+                    {
                         name: "password",
                         type: "varchar",
                         length: "255",
