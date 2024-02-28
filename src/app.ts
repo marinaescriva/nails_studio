@@ -10,17 +10,17 @@ export const app: Application = express();
 
 app.use(express.json());
 
-
-app.get(`/users`, getUsers);
-app.get(`/users/profile`, getUsersProfile);
-app.put(`/users/profile`, putUsersProfile);
-
-app.post(`/auth/login`, postAuthLogin);
-app.post(`/auth/register`, postAuthRegister);
-
-app.get(`/appointments/:id`, getAppointmentsbyID);
-app.get(`/appointments`, getAppointments);
-app.post(`/appointments`, postAppointments);
-app.put(`/appointments`, putAppointments);
-
-app.get(`/services`, getServices);
+//USERS 
+app.get(`/api/users`, getUsers);
+app.get(`/api/users/profile`, getUsersProfile);
+app.put(`/api/users/profile`, putUsersProfile);
+//AUTH
+app.post(`/api/auth/login`, postAuthLogin);
+app.post(`/api/auth/register`, postAuthRegister);
+//CITAS APPOINTMENTS
+app.get(`/api/appointments/:id`, getAppointmentsbyID);
+app.get(`/api/appointments`, getAppointments);
+app.post(`/api/appointments`, postAppointments);
+app.put(`/api/appointments`, putAppointments);
+//SERVICES
+app.get(`/api/services`, getServices);
