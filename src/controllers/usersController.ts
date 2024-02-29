@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { User } from "../models/User";
-import { Role } from "../models/Role";
+// import { Role } from "../models/Role";
 // import bcrypt from "bcrypt";
 
-export const getUsers = async(req: Request, res: Response) => {
+export const getUsers = async (req: Request, res: Response) => {
 
     try {
         const users = await User.find({
@@ -16,7 +16,7 @@ export const getUsers = async(req: Request, res: Response) => {
             }
 
         });
-        if(req.users.roleID == 1) 
+
         res.status(200).json(  //solo debe ser para super_admin
             {
                 success: true,
@@ -24,7 +24,7 @@ export const getUsers = async(req: Request, res: Response) => {
                 data: users
             }
         )
-    }catch(error){
+    } catch (error) {
         res.status(200).json(
             {
                 success: false,
@@ -36,23 +36,23 @@ export const getUsers = async(req: Request, res: Response) => {
     }
 };
 
-    export const getUsersProfile = (req: Request, res: Response) => {
+export const getUsersProfile = (req: Request, res: Response) => {
 
-        res.status(200).json(
-            {
-                success: true,
-                message: "v"
-            }
-        )
+    res.status(200).json(
+        {
+            success: true,
+            message: "v"
+        }
+    )
 
-    };
-    export const putUsersProfile = (req: Request, res: Response) => {
+};
+export const putUsersProfile = (req: Request, res: Response) => {
 
-        res.status(200).json(
-            {
-                success: true,
-                message: "modificar un campo del perfil"
-            }
-        )
+    res.status(200).json(
+        {
+            success: true,
+            message: "modificar un campo del perfil"
+        }
+    )
 
-    };
+};

@@ -12,6 +12,7 @@ export const getServices = async (req: Request, res: Response) => {
                 description: true,
             }
         });
+        console.log(services)
 
         res.status(200).json({
             success: true,
@@ -30,4 +31,3 @@ export const getServices = async (req: Request, res: Response) => {
 
     }
 }
-// app.get(`/services`, getServices);
