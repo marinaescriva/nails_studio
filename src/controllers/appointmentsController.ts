@@ -12,7 +12,7 @@ export const postAppointments = (req:Request, res:Response)=>{
 
 };
 
-export const putAppointments = (req:Request, res:Response)=>{
+export const updateAppointments = (req:Request, res:Response)=>{
 
     res.status(200).json(
         {
@@ -23,7 +23,7 @@ export const putAppointments = (req:Request, res:Response)=>{
 
 };
 
-export const getAppointmentsbyID = (req:Request, res:Response)=>{
+export const getAppointmentsById = (req:Request, res:Response)=>{
 
     req.params.id;
 
