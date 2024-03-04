@@ -120,3 +120,5 @@ export const createUsers = async (req: Request, res: Response) => {
         })
     }
 };
+export const deleteUserProfile = async (req: Request, res: Response) => {
+};
