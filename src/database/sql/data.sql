@@ -31,3 +31,21 @@ insert into services (id, name, description) values (2, 'semigel', 'Uñas semige
 insert into services (id, name, description) values (3, 'gel', 'Uñas de gel forma a escoger. Precio en función de su largo. Extras a parte.');
 insert into services (id, name, description) values (4, 'retirada', 'Retirada de uñas con diferentes materiales (a consultar)');
 
+-- create random appointments
+
+
+insert into roles (id, appointment_date, user_id, service_id) values (1,  '2024-03-04', '1', '2')
+insert into roles (id, appointment_date, user_id, service_id) values (2,  '2024-03-04', '1', '3')
+insert into roles (id, appointment_date, user_id, service_id) values (3,  '2024-03-04', '2', '2')
+insert into roles (id, appointment_date, user_id, service_id) values (4,  '2024-03-04', '2', '4')
+insert into roles (id, appointment_date, user_id, service_id) values (5,  '2024-03-04', '12', '1')
+insert into roles (id, appointment_date, user_id, service_id) values (6,  '2024-03-05', '3', '1')
+insert into roles (id, appointment_date, user_id, service_id) values (7,  '2024-03-05', '4', '3')
+insert into roles (id, appointment_date, user_id, service_id) values (8,  '2024-03-05', '5', '2')
+insert into roles (id, appointment_date, user_id, service_id) values (9,  '2024-03-05', '6', '1')
+insert into roles (id, appointment_date, user_id, service_id) values (10, '2024-03-06', '6', '3')
+insert into roles (id, appointment_date, user_id, service_id) values (11, '2024-03-06', '7', '4')
+insert into roles (id, appointment_date, user_id, service_id) values (12, '2024-03-06', '8', '4')
+insert into roles (id, appointment_date, user_id, service_id) values (13, '2024-03-07', '10', '2')
+insert into roles (id, appointment_date, user_id, service_id) values (14, '2024-03-07', '11', '4')
+insert into roles (id, appointment_date, user_id, service_id) values (15, '2024-03-08', '9', '1')
