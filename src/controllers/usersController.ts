@@ -41,14 +41,16 @@ export const getUsers = async (req: Request, res: Response) => {
 
 export const getUsersProfile = async (req: Request, res: Response) => {
 
-    // search users by his name and show his profile, only  for own user
+    // search users by his name and show his profile, only for own user
 
     try {
         const userId = req.params.id;
 
-        const user = await User.findOneBy( //promesa que busca el id del user
+        const user = await User.findOne( //promesa que busca el id del user
+           { where: 
             {
                 id: parseInt(userId)
+            }
             }
         )
 
