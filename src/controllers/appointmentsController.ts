@@ -46,3 +46,6 @@ export const getAppointments = (req:Request, res:Response)=>{
     )
 
 };
+
+export const deleteAppointmentId = async (req: Request, res: Response) => {
+}

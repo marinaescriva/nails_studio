@@ -1,12 +1,12 @@
-import bcrypt, { compareSync } from "bcrypt";
+// import bcrypt, { compareSync } from "bcrypt";
 
-export const hashPassword = (password: string) => {
+// export const hashPassword = (password: string) => {
 
-    return bcrypt.hashSync( password, 8);
-}
+//     return bcrypt.hashSync( password, 8);
+// }
 
-export const comparePassword = (password: string , hashedPassword: string) => {
+// export const comparePassword = (password: string , hashedPassword: string) => {
 
-    return compareSync (password , hashedPassword);
-}
+//     return compareSync (password , hashedPassword);
+// }
 

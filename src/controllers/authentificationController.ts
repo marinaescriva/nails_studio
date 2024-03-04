@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../models/User";
-import { hashPassword } from "../helpers/passwordUtilities";
-import  jwt  from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 export const register = async (req: Request, res: Response) => {
@@ -13,10 +12,20 @@ export const register = async (req: Request, res: Response) => {
         if (!name || !surname || !email || !password) {
             return res.status(400).json({
                 success: false,
-                message: "Email and password are needed", //cambia esto
+                message: "Email and password are needed"
             })
         }
-        // todo validar formato email
+
+        // password validation 
+
+        if (password.length < 6 || password.length > 10) {
+            return res.status(400).json({
+                success: false,
+                message: "password incorrect"
+            })
+        }
+
+        // email validation, if this email already exist..
 
         const user = await User.findOne(
             {
@@ -31,36 +40,54 @@ export const register = async (req: Request, res: Response) => {
             throw new Error("register cannot be completed");
         }
 
-        const hashedPassword = hashPassword(password);
+        // in case email doesnt have correct format..
 
-        await User.create({
+        const validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if (!validEmail.test(email)) {
+            return res.status(400).json(
+                {
+                    success: false,
+                    message: "format email invalid"
+                }
+            )
+        }
+
+        const hashedPassword = bcrypt.hashSync(password, 8);
+            console.log(hashedPassword)
+
+        const newUser = await User.create({
 
             name: name,
             surname: surname,
             email: email,
             password: hashedPassword
 
-        }).save()
-        console.log(4)
+            // this user is always id:3 because is a normal user, not admin or superadmin
+
+        }).save() // saving this new user in DB
+
+        console.log(newUser) //show new user created
 
         return res.status(201).json(
             {
 
                 success: true,
-                message: "user was created"
+                message: "user is registered"
 
             }
         )
-    } catch (error) {
+        } catch (error) {
         res.status(500).json(
             {
                 success: false,
-                message: "the user can't be created"
+                message: "the user can't be registered",
+                error: error
             }
         )
-    }
+        }
 
 };
+
 export const login = async (req: Request, res: Response) => {
 
     try {
@@ -72,7 +99,7 @@ export const login = async (req: Request, res: Response) => {
         if (!email || !password) {
             return res.status(400).json({
                 success: false,
-                message: "Email and password are required"
+                message: "Email and/or password are required"
             })
         }
 
@@ -87,7 +114,7 @@ export const login = async (req: Request, res: Response) => {
             },
             select: {
                 id: true,
-                password: true, ///hashedPassword? tokeeen
+                password: true, // token
                 email: true,
                 role: {
                     name: true
@@ -95,7 +122,7 @@ export const login = async (req: Request, res: Response) => {
             }
         })
 
-        // error if this user doesnt exist
+        // error if this user doesnt exist or isnt wrote properly
 
         if (!user) {
             return res.status(400).json({
@@ -103,10 +130,9 @@ export const login = async (req: Request, res: Response) => {
                 message: "Wrong user"
             })
         }
-      
-        console.log(user);
 
-        // compare passwords
+
+        // compare passwords 
         const isValidPassword = bcrypt.compareSync(password, user.password);
 
         if (!isValidPassword) {
@@ -116,7 +142,7 @@ export const login = async (req: Request, res: Response) => {
             })
         }
 
-        // crear TOKEN
+        // create the TOKEN
         const token = jwt.sign({
             userId: user.id,
             roleName: user.role.name
@@ -141,4 +167,4 @@ export const login = async (req: Request, res: Response) => {
             error: error
         })
     }
-}
+};
