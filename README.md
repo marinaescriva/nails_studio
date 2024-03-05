@@ -133,6 +133,19 @@ Las rutas de citas incluyen:
     <summary>Editar una cita cambiando el servicio </summary>
 </details>
 
+### Agradecimientos
+
+A mis compañeros por su ayuda y consejo, pero sobretodo por su paciencia:
+
+*Marta* https://github.com/MartaGBayona
+*Fernando* https://github.com/Ferelbue
+*Carlos* https://github.com/CariblaGIT
+*Pedro* https://github.com/Eryhnar
+*Ana* https://github.com/ariusvi
+
+
+
+
 
 
 
