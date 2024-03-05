@@ -1,6 +1,6 @@
 import express, { Application } from "express";
 
-import { deleteUserProfile, getUsers, getUsersProfile, updateUsersProfile } from "./controllers/usersController";
+import { getUsers, getUsersProfile, updateUsersProfile } from "./controllers/usersController";
 import { getServices } from "./controllers/servicesController";
 import { deleteAppointmentId, getAppointments, getAppointmentsById, postAppointments, updateAppointments } from "./controllers/appointmentsController";
 import { createRoles, deleteRoles, getRoles, updateRoles } from "./controllers/rolesController";
@@ -16,7 +16,6 @@ app.use(express.json());
 //USERS 
 app.get(`/api/users`, auth, isSuperAdmin, getUsers); // ONLY SUPER_ADMIN
 app.get(`/api/users/profile`, auth, getUsersProfile); 
-app.delete('/api/users/:id',auth, isSuperAdmin, deleteUserProfile); //extra
 app.put(`/api/users/profile`, auth, updateUsersProfile);
 
 
