@@ -42,12 +42,12 @@ export const getUsersProfile = async (req: Request, res: Response) => {
     // search users by his name and show his profile, only for own user
 
     try {
-        const userId = req.params.id;
+        const userId = req.tokenData.userId;
 
         const user = await User.findOne( //promesa que busca el id del user
            { where: 
             {
-                id: parseInt(userId)
+                id: userId
             }
             }
         )
@@ -80,38 +80,39 @@ export const updateUsersProfile = async (req: Request, res: Response) => {
 
     try {
 
-        const userId = req.params.id;
+        const userId = req.tokenData.userId;
         const name = req.body.name;
 
 
         //validar datos
         const user = await User.findOneBy( //promesa que busca el id del user, busca si existe el resgistro 
             {
-                id: parseInt(userId)
+                id: userId
             }
         )
 
+        
         if (!user) {
             return res.status(404).json({
                 success: false,
                 message: "user not found",
             })
         }
-
+      
     
         //tratar datos
 
         //actualizar en BD
         const userUpdated = await User.update(
             {
-                id: parseInt(userId)
+                id: userId
 
             },
             {
                 name: name
             }
         );
-
+          
         //responder
 
         res.status(200).json({
@@ -119,7 +120,7 @@ export const updateUsersProfile = async (req: Request, res: Response) => {
             message: "user is updated",
             data: userUpdated
         })
-
+    
 
     } catch (error) {
         res.status(500).json({
