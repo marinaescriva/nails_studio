@@ -1,1 +1,1 @@
-SELECT * FROM nails_studio.users;
+SELECT * FROM nails_studio.roles;
