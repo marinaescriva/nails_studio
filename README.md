@@ -52,7 +52,86 @@ $ npm run run-migrations
 
 Las rutas trabajadas para el proyecto son:
 
-*AUTHENTIFICATION
+</br>
+</br>
+
+**Autentificacion (AUTH)**
+
+<details>
+<img src="./img/register.jpg">
+    <summary>Primero registramos un usuario.  </summary>
+    (Los parámetros obligatorios serían el email y el password)
+
+
+</details>
+
+<details>
+ <img src="./img/login.jpg">
+    <summary>Realizar el login  </summary>
+    Tras el registro del usuario, podemos realizar el login de un usuario previamente creado utilizando su email y contraseña.
+
+    Al logearse el usuario obtiene un token, donde se registran todos sus datos.
+</details>
+
+</br>
+</br>
+
+**Usuarios (Users)**
+
+Las rutas de usuarios incluyen:
+
+<details>
+
+<img src="./img/get_users.jpg"> 
+  <summary>Obtener todos los usuarios del sistema siendo Super_admin </summary>
+
+</details>
+
+<details>
+ <img src="./img/get_user_profile.jpg"> 
+  <summary>Ver el perfil del usuario</summary>
+</details>
+
+<details>
+    <img src="./img/update_user.jpg"> 
+    <summary>Editar el nombre del usuario</summary>
+</details>
+</br>
+</br>
+
+**Servicios (Services)**
+
+Las rutas de servicios incluyen:
+
+<details>
+    <img src="./img/get_services.jpg"> 
+    <summary>Ver todos los servicios </summary>
+</details>
+
+</br>
+</br>
+
+**Citas (Appointments)**
+
+Las rutas de citas incluyen:
+
+<details>
+    <img src="./img/create_newAppointment.jpg"> 
+    <summary>Crear una nueva cita </summary>
+</details>
+
+<details>
+    <img src="./img/get_appointments.jpg"> 
+    <summary>Ver tus citas </summary>
+</details>
+<details>
+    <img src="./img/get_appointmentsById.jpg"> 
+    <summary>Ver la cita por id </summary>
+</details>
+<details>
+    <img src="./img/update_serviceByAppointment.jpg"> 
+    <summary>Editar una cita cambiando el servicio </summary>
+</details>
 
 
 
