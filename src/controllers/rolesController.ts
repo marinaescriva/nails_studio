@@ -48,21 +48,21 @@ export const createRoles= async(req:Request, res:Response)=>{
 
    
 
-export const updateRoles=(req:Request, res:Response)=>{
+// export const updateRoles=(req:Request, res:Response)=>{
 
-    // recuperar datos desde la ruta
+//     // recuperar datos desde la ruta
 
-    req.params.id  
-    console.log(req.params.id);
+//     req.params.id  
+//     console.log(req.params.id);
 
-    res.status(200).json (
-        {
-         succes: true,
-         message: "roles updated sucessfully",
-        }
-    );
+//     res.status(200).json (
+//         {
+//          succes: true,
+//          message: "roles updated sucessfully",
+//         }
+//     );
 
-};
+// };
 
 export const deleteRoles=(req:Request, res:Response)=>{
     try {
