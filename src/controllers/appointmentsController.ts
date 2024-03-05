@@ -12,14 +12,14 @@ export const postAppointments = async (req: Request, res: Response) => {
 
 
         const newAppointment = await Appointment.create({
-            user:{
+            user: {
                 id: user
             },
-            service:{
+            service: {
                 id: service
             },
             appointmentDate: appointment_date
-           
+
         }).save()
 
         res.status(201).json({
@@ -40,79 +40,86 @@ export const postAppointments = async (req: Request, res: Response) => {
 
 export const updateAppointments = async (req: Request, res: Response) => { //////////////////// to do
 
- 
-//     try {
+    try {
 
-//         const userId = req.params.id;
-//         const serviceId = req.body.serviceId;
-//         const name = req.body.name;
+        const appointmentId = req.body.id;
+        // const userId = req.tokenData.userId;
+        // const appointmentDate = req.body.appointmentDate;
+        const serviceId = req.body.serviceId;
+        
+        const appointment = await Appointment.findOneBy( // busca el appointment por su id
+            {
+                id: parseInt(appointmentId)
+            }
+        )
+        
 
-
-//         //validar datos
-//         const user = await User.findOneBy( //promesa que busca el id del user, busca si existe el resgistro 
-//             {
-//                 id: parseInt(userId)
-//             }
-//         )
-
-//         if (!user) {
-//             return res.status(404).json({
-//                 success: false,
-//                 message: "user not found",
-//             })
-//         }
-
-    
-//         //tratar datos
-
-//         //actualizar en BD
-//         const userUpdated = await User.update(
-//             {
-//                 id: parseInt(userId)
-
-//             },
-//             {
-//                 name: name
-//             }
-//         );
-
-//         //responder
-
-//         res.status(200).json({
-//             success: true,
-//             message: "user is updated",
-//             data: userUpdated
-//         })
+        if (!appointment) {
+            return res.status(404).json({
+                success: false,
+                message: "this appointment didn't exist",
+            })
+        }
 
 
-//     } catch (error) {
-//         res.status(500).json({
-//             success: false,
-//             message: "user cant be Updated",
-//             error: error
-//         })
+        // type of service updated
+        const appointmentUpdated = await Appointment.update(
+            {
+                id: parseInt(appointmentId)
+            },
+            {
+                service: {
+                    id: parseInt(serviceId)
+                }
+
+            },
+
+        );
+
+        //responder
+        
+        res.status(200).json({
+            success: true,
+            message: "appointment is updated",
+            data: appointmentUpdated
+        })
+
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "user cant be Updated",
+            error: error
+        })
 
     }
+};
 
 
-export const getAppointmentsById = async(req: Request, res: Response) => {
+export const getAppointmentsById = async (req: Request, res: Response) => {
 
-   const appointmentId = req.params.id;
+    const appointmentId = req.params.id;
 
     const appointment = await Appointment.findOne( //promesa que busca el id del user
-    { where: 
-     {
-         id: parseInt(appointmentId)
-     }
-     }
- )
-
+        {
+            where:
+            {
+                id: parseInt(appointmentId)
+            }
+        }
+    )
+    if (!appointmentId) {
+        return res.status(400).json({
+            success: false,
+            message: `this: ${appointmentId} didn't exist yet`
+        })
+    }
 
 
     res.status(200).json(
         {
             success: true,
-            message: "recuperar mi cita",
+            message: "appointment finded succesfully",
             data: appointment
 
         }
@@ -125,24 +132,23 @@ export const getAppointments = async (req: Request, res: Response) => {
     const userId = req.tokenData.userId // busca con el token el usuario
 
     const appointment = await Appointment.find( //promesa que busca las citas de ese id de usuario
-    { where: 
-     {
-         user:{
-            id: userId
-         }
-     }
-     }
- )
+        {
+            where:
+            {
+                user: {
+                    id: userId
+                }
+            }
+        }
+    );
 
     res.status(200).json(
         {
             success: true,
-            message: "ver mis citas",
+            message: "user has appointments",
             data: appointment //muestra las citas de ese id user
         }
     )
 
 };
 
-export const deleteAppointmentId = async (req: Request, res: Response) => {
-}
