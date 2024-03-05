@@ -93,7 +93,9 @@ export const login = async (req: Request, res: Response) => {
     try {
         const email = req.body.email;
         const password = req.body.password;
-
+        
+        console.log(email)
+        console.log(password)
         // email validation
 
         if (!email || !password) {

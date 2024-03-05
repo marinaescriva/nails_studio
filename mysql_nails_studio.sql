@@ -1,0 +1,1 @@
+SELECT * FROM nails_studio.users;
