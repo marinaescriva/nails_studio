@@ -7,16 +7,16 @@ export const postAppointments = async (req: Request, res: Response) => {
         const appointment_date = req.body.appointmentDate;
         console.log(appointment_date);
 
-        const user = req.body.user.id;
-        const service = req.body.service.id;
+        const userId = req.tokenData.userId;
+        const serviceId = req.body.service.id;
 
 
         const newAppointment = await Appointment.create({
             user: {
-                id: user
+                id: userId
             },
             service: {
-                id: service
+                id: serviceId
             },
             appointmentDate: appointment_date
 

@@ -10,12 +10,18 @@ export const register = async (req: Request, res: Response) => {
         const { name, surname, password, email } = req.body;
         //// to do the token
 
-        if (!name || !surname || !email || !password) {
+        if ( !email || !password) {
             return res.status(400).json({
                 success: false,
                 message: "Email and password are needed"
             })
         }
+        // if (!name || !surname || !email || !password) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: "Email and password are needed"
+        //     })
+        // }
 
         // password validation 
 
@@ -117,6 +123,7 @@ export const login = async (req: Request, res: Response) => {
             },
             select: {
                 id: true,
+                name: true,
                 password: true, // token
                 email: true,
                 role: {
@@ -146,9 +153,18 @@ export const login = async (req: Request, res: Response) => {
         }
 
         // create the TOKEN
+
+        // 26-03 cambio para ver si loggea con nombre de usuario ////////////////////////////////////////////IMPORTANTE////////////////////////////////////////////////777
+
+        // const token = jwt.sign({
+        //     userId: user.id,
+        //     name: user.role.name
+        // },
+        
         const token = jwt.sign({
             userId: user.id,
-            name: user.role.name
+            role: user.role.name,
+            name: user.name
         },
             process.env.JWT_SECRET as string,
             {
