@@ -112,13 +112,18 @@ export const updateUsersProfile = async (req: Request, res: Response) => {
                 name: name
             }
         );
+
+        const userFetched = await User.findOneBy({
+            id: userId
+        })
           
         //responder
 
         res.status(200).json({
             success: true,
             message: "user is updated",
-            data: userUpdated
+            data: userUpdated,
+            userData: userFetched
         })
     
 

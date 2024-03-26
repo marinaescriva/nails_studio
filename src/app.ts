@@ -9,9 +9,12 @@ import { login, register } from "./controllers/authentificationController";
 import { auth } from "./middlewares/auth";
 import { isSuperAdmin} from "./middlewares/isSuperAdmin";
 
+import cors from "cors";
+
 export const app: Application = express();
 
 app.use(express.json());
+app.use(cors());
 
 //USERS 
 app.get(`/api/users`, auth, isSuperAdmin, getUsers); // ONLY SUPER_ADMIN
