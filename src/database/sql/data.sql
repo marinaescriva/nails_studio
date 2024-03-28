@@ -9,19 +9,19 @@ insert into roles (id, name) values (3, 'user');
 
 -- create random users 
 
-insert into users (id, name, surname, password, email, role_id) values (1, "super_admin" ,"super_admin", "$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "super_admin@super_admin.com", 1 );
-insert into users (id, name, surname, password, email, role_id) values (2, "admin" , "admin","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "admin@admin.com", 2 );
-insert into users (id, name, surname, password, email, role_id) values (3, "user" , "user","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "user@user.com", 3 );
-insert into users (id, name, surname, password, email, role_id) values (4, "Bert" , "Otter","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "botter3@canalblog.com", 1 );
-insert into users (id, name, surname, password, email, role_id) values (5, "Annalee" , "Loftie","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "aloftie4@comsenz.com", 1 );
-insert into users (id, name, surname, password, email, role_id) values (6, "Leena" , "Stodd","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "lstodd5@apple.com", 3 );
-insert into users (id, name, surname, password, email, role_id) values (7, "Veronike" , "Quinn","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "vquinn6@adobe.com", 3 );
-insert into users (id, name, surname, password, email, role_id) values (8, "Yettie" , "Iacobo","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "yiacobo7@free.fr", 3 );
-insert into users (id, name, surname, password, email, role_id) values (9, "Taryn" , "Tregien","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "ttregien8@desdev.cn", 3 );
-insert into users (id, name, surname, password, email, role_id) values (10, "Manon" , "Cordaroy","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "mcordaroy9@hao123.com", 2 );
-insert into users (id, name, surname, password, email, role_id) values (11, "Elysia" , "Kobel","$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "ekobela@ted.com", 1 );
-insert into users (id, name, surname, password, email, role_id) values (12, "Dorri" , "Attock" ,"$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "dattockb@cbsnews.com", 2 );
-insert into users (id, name, surname, password, email, role_id) values (13, "Alba" , "Perez" ,"$2b$08$dkTnQyF3BPf06q8kbXDdjOGVQJk4jICz8PWkgnfXBhtqQDtsrUubK" , "alba@alba.com", 3 );
+insert into users (id, name, surname, password, email, role_id) values (1, "super_admin" ,"super_admin", "$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "super_admin@super_admin.com", 1 );
+insert into users (id, name, surname, password, email, role_id) values (2, "admin" , "admin","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "admin@admin.com", 2 );
+insert into users (id, name, surname, password, email, role_id) values (3, "user" , "user","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "user@user.com", 3 );
+insert into users (id, name, surname, password, email, role_id) values (4, "Bert" , "Otter","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "botter3@canalblog.com", 1 );
+insert into users (id, name, surname, password, email, role_id) values (5, "Annalee" , "Loftie","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "aloftie4@comsenz.com", 1 );
+insert into users (id, name, surname, password, email, role_id) values (6, "Leena" , "Stodd","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "lstodd5@apple.com", 3 );
+insert into users (id, name, surname, password, email, role_id) values (7, "Veronike" , "Quinn","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "vquinn6@adobe.com", 3 );
+insert into users (id, name, surname, password, email, role_id) values (8, "Yettie" , "Iacobo","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "yiacobo7@free.fr", 3 );
+insert into users (id, name, surname, password, email, role_id) values (9, "Taryn" , "Tregien","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "ttregien8@desdev.cn", 3 );
+insert into users (id, name, surname, password, email, role_id) values (10, "Manon" , "Cordaroy","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "mcordaroy9@hao123.com", 2 );
+insert into users (id, name, surname, password, email, role_id) values (11, "Elysia" , "Kobel","$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "ekobela@ted.com", 1 );
+insert into users (id, name, surname, password, email, role_id) values (12, "Dorri" , "Attock" ,"$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "dattockb@cbsnews.com", 2 );
+insert into users (id, name, surname, password, email, role_id) values (13, "Alba" , "Perez" ,"$2b$08$9I7i43KA7gbWrvgoGtlt3uYAGh3UYYuYgwCiL9Y4c7UR2Y24IZccK" , "alba@alba.com", 3 );
 								
 
 -- create random services
