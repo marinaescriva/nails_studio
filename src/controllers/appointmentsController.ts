@@ -133,12 +133,15 @@ export const getAppointments = async (req: Request, res: Response) => {
 
     const appointment = await Appointment.find( //promesa que busca las citas de ese id de usuario
         {
-            where:
-            {
+            where:{
                 user: {
                     id: userId
                 }
-            }
+            },
+            relations: {
+                service: true,
+                user: true
+            },
         }
     );
 

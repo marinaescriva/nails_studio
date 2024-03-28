@@ -28,6 +28,7 @@ export class Appointments1709143422875 implements MigrationInterface {
                         name: "service_id",
                         type: "int"
                     }
+                    
                 ],
                 foreignKeys: [
                     {
