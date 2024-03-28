@@ -42,7 +42,7 @@ export const register = async (req: Request, res: Response) => {
             }
         );
 
-        if (user) {
+        if (!user) { //correccion ! 
 
             throw new Error("register cannot be completed");
         }
@@ -177,6 +177,7 @@ export const login = async (req: Request, res: Response) => {
             success: true,
             message: "User logged in successfully",
             token: token,
+            password: password, //q me enseñe el hash password para la BD
 
         })
         
