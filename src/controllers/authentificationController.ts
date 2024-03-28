@@ -25,7 +25,7 @@ export const register = async (req: Request, res: Response) => {
 
         // password validation 
 
-        if (password.length < 6 || password.length > 10) {
+        if (password.length < 8 || password.length > 10) {
             return res.status(400).json({
                 success: false,
                 message: "password incorrect"
@@ -42,7 +42,7 @@ export const register = async (req: Request, res: Response) => {
             }
         );
 
-        if (!user) { //correccion ! 
+        if (user) { //correccion ! 
 
             throw new Error("register cannot be completed");
         }
@@ -83,6 +83,7 @@ export const register = async (req: Request, res: Response) => {
 
             }
         )
+        
         } catch (error) {
         res.status(500).json(
             {
@@ -90,7 +91,7 @@ export const register = async (req: Request, res: Response) => {
                 message: "the user can't be registered",
                 error: error
             }
-        )
+        );
         }
 
 };
