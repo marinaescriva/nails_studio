@@ -155,3 +155,24 @@ export const getAppointments = async (req: Request, res: Response) => {
 
 };
 
+export const deleteAppointments = async (req: Request, res: Response) => {
+
+    try {
+        const appointmentId = parseInt(req.params.id);
+
+        Appointment.delete(
+            { id: appointmentId}
+        )
+
+        res.status(200).json({
+            "success": true,
+            "message": "Appointment deleted successfuly"
+        })
+    }catch(error){
+        res.status(500).json({
+            success: false,
+            message: "appointment cant be deleted",
+            error: error
+        })
+    }
+};

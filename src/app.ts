@@ -2,7 +2,7 @@ import express, { Application } from "express";
 
 import { getUsers, getUsersProfile, updateUsersProfile } from "./controllers/usersController";
 import { getServices } from "./controllers/servicesController";
-import { getAppointments, getAppointmentsById, postAppointments, updateAppointments } from "./controllers/appointmentsController";
+import { deleteAppointments, getAppointments, getAppointmentsById, postAppointments, updateAppointments } from "./controllers/appointmentsController";
 import { createRoles, deleteRoles, getRoles} from "./controllers/rolesController";
 import { login, register } from "./controllers/authentificationController";
 
@@ -37,6 +37,7 @@ app.get(`/api/appointments/:id`, auth, getAppointmentsById);
 app.get(`/api/appointments`, auth, getAppointments); 
 app.post(`/api/appointments`, auth, postAppointments);
 app.put(`/api/appointments`, auth, updateAppointments);
+app.delete(`/api/appointments`,auth, deleteAppointments);
 
 //SERVICES
 app.get(`/api/services`, getServices);

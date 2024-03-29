@@ -79,7 +79,7 @@ export const deleteRoles=(req:Request, res:Response)=>{
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: "Role was not updated",
+            message: "Role cant be deleted",
             error: error
         })
     }
