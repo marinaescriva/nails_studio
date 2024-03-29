@@ -37,7 +37,7 @@ app.get(`/api/appointments/:id`, auth, getAppointmentsById);
 app.get(`/api/appointments`, auth, getAppointments); 
 app.post(`/api/appointments`, auth, postAppointments);
 app.put(`/api/appointments`, auth, updateAppointments);
-app.delete(`/api/appointments`,auth, deleteAppointments);
+app.delete(`/api/appointments`, auth, deleteAppointments);
 
 //SERVICES
 app.get(`/api/services`, getServices);

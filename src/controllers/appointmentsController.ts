@@ -158,7 +158,7 @@ export const getAppointments = async (req: Request, res: Response) => {
 export const deleteAppointments = async (req: Request, res: Response) => {
 
     try {
-        const appointmentId = parseInt(req.params.id);
+        const appointmentId = parseInt(req.body.appointmentId);
 
         Appointment.delete(
             { id: appointmentId}
