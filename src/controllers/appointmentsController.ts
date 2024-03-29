@@ -8,7 +8,7 @@ export const postAppointments = async (req: Request, res: Response) => {
         console.log(appointment_date);
 
         const userId = req.tokenData.userId;
-        const serviceId = req.body.service.id;
+        const serviceId = req.body.service_id;
 
 
         const newAppointment = await Appointment.create({
