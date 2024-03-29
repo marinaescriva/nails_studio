@@ -168,9 +168,9 @@ export const login = async (req: Request, res: Response) => {
             name: user.name
         },
             process.env.JWT_SECRET as string,
-            {
-                expiresIn: "9h"
-            }
+            // {
+            //     expiresIn: "9h"
+            // }
 
         )
 
