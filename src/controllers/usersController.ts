@@ -171,3 +171,27 @@ export const createUsers = async (req: Request, res: Response) => {
         })
     }
 };
+
+export const deleteUser = async (req: Request, res: Response) => {
+
+    try {
+        const userId = parseInt(req.params.id);
+
+        User.delete(
+            { id: userId}
+            )
+    
+        res.status(200).json({
+            "success": true,
+            "message": "User deleted successfuly"
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "User cant be deleted",
+            error: error
+        })
+    }
+
+}
